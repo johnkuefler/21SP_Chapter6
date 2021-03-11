@@ -14,7 +14,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
         // classes/objects that we've used already
         Scanner keyboard = new Scanner(System.in);
         Scanner keyboard2 = new Scanner(System.in);
@@ -28,9 +27,38 @@ public class Main {
         myRectangle.setWidth(20);
         System.out.println(myRectangle.getArea());
 
-        Rectangle myRectangle2 = new Rectangle();
-        myRectangle2.setLength(1);
-        myRectangle2.setWidth(2);
+        Rectangle myRectangle2 = new Rectangle(1, 2);
         System.out.println(myRectangle2.getArea());
+
+        double combinedAreas = addRectangleAreas(myRectangle, myRectangle2);
+        System.out.println(combinedAreas);
+
+        // cars
+        Car myTruck = new Car(2005, "Ford", "F150", 0, 10);
+        Car mySportsCar = new Car(2021, "Ford", "Mustang", 0, 30);
+
+        myTruck.accelerate();
+        myTruck.accelerate();
+
+        mySportsCar.accelerate();
+
+        System.out.println(myTruck.getCurrentSpeed());
+        System.out.println(mySportsCar.getCurrentSpeed());
+
+        mySportsCar.brake();
+        mySportsCar.brake();
+
+        myTruck.brake();
+        myTruck.brake();
+
+        System.out.println(myTruck.getCurrentSpeed());
+        System.out.println(mySportsCar.getCurrentSpeed());
+
     }
+
+    // example of taking objects as inputs to methods
+    public static double addRectangleAreas(Rectangle rect1, Rectangle rect2) {
+        return rect1.getArea() + rect2.getArea();
+    }
+
 }
