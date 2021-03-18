@@ -14,6 +14,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        User myUser = new User("john@test.com", "jkuefler", "password", 2);
+        User myUser2 = new User("bob@test.com", "btester", "password2", 5);
+        
+        System.out.println(myUser.getEmail());
+        System.out.println(myUser.getUserName());
+        System.out.println(myUser.getDailyLoggedOnHours());
+
         // classes/objects that we've used already
         Scanner keyboard = new Scanner(System.in);
         Scanner keyboard2 = new Scanner(System.in);
